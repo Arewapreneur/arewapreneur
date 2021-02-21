@@ -1,19 +1,35 @@
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAVWlG0XGCh-OFYsIXpRF_C2FrlqoJ1gI8",
+  authDomain: "arewapreneurs-5ce20.firebaseapp.com",
+  projectId: "arewapreneurs-5ce20",
+  storageBucket: "arewapreneurs-5ce20.appspot.com",
+  messagingSenderId: "33604727610",
+  appId: "1:33604727610:web:05f0b1b85140bd8e175603",
+  measurementId: "G-K5JN88EY75"
+};
+
+
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 
 <script>
   // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
-    apiKey: "AIzaSyB5yfPviY89K9Ga_S_5DRlGiHMWNWKmKMI",
-    authDomain: "quikmoni-app.firebaseapp.com",
-    projectId: "quikmoni-app",
-    storageBucket: "quikmoni-app.appspot.com",
-    messagingSenderId: "422121301616",
-    appId: "1:422121301616:web:85d6e3417fa9fc15bfb6b5"
+    apiKey: "AIzaSyAVWlG0XGCh-OFYsIXpRF_C2FrlqoJ1gI8",
+    authDomain: "arewapreneurs-5ce20.firebaseapp.com",
+    projectId: "arewapreneurs-5ce20",
+    storageBucket: "arewapreneurs-5ce20.appspot.com",
+    messagingSenderId: "33604727610",
+    appId: "1:33604727610:web:05f0b1b85140bd8e175603",
+    measurementId: "G-K5JN88EY75"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>

@@ -20,7 +20,7 @@ const Setup = () => {
         <div className="step_1">
           <h5 className="heading">
             👋 Hey there,
-            <br /> let’s setup your Quikmoni account
+            <br /> let’s setup your ArewaPrenuer account
           </h5>
           <p className="text-gray mb-3">
             Kindly provide the correct information

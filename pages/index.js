@@ -23,7 +23,7 @@ export default function Home() {
     <Layout>
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className="heading mb-3">Welcome to QuikMoni</h1>
+          <h1 className="heading mb-3">ArewaPrenuer</h1>
           <p className="sub-heading mb-2">Your quick access to money</p>
           <p className="text-mini mb-2 text-gray">
             Login or Signup to continue

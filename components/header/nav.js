@@ -33,7 +33,7 @@ const Nav = () => {
     <nav className="navbar">
       <Link href="/">
         <div className="logo">
-          <img src={logo} />
+          ArewaPrenuer
         </div>
       </Link>
       <div className="burger-icon" onClick={() => setMenu(!menu)}>
