@@ -44,7 +44,8 @@
   }
 }
 
-.borrow {
+.borrow,
+.products {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -53,13 +54,46 @@
   padding: 30px 0;
   padding-bottom: 25%;
 
+  .products_list{
+    overflow-y: auto;
+  }
+
   .amount,
-  .request {
+  .request,
+  .product,
+  .searchbox {
     position: relative;
     border-radius: 20px;
     padding: 10px 15px;
     border: 2px solid $primary;
   }
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+
+    .product__img {
+      width: 40%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .name {
+      margin-bottom: 45px;
+    }
+
+    .btn_holder {
+      display: flex;
+      justify-content: flex-end;
+      align-self: flex-end;
+      align-items: flex-end;
+      align-content: flex-end;
+    }
+  }
+
+
 
   .clickable {
     &:hover {
@@ -67,12 +101,12 @@
         color: #ffffff;
       }
 
-      background-color: #07E82C30;
+      background-color: #07e82c30;
     }
   }
 
   .active_state {
-    background-color: #07E82C30;
+    background-color: #07e82c30;
   }
 
   .recommended {
@@ -98,7 +132,7 @@
   .enter_amount {
     width: 100%;
     padding: 10px 20px;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e;
     border-radius: 15px;
     display: flex;
 
@@ -113,8 +147,6 @@
     input {
       width: 100%;
     }
-
-
 
     .no_border {
       border: unset;

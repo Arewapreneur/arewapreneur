@@ -11,7 +11,11 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Head>
+<<<<<<< HEAD
         <title>QuikMoniuu</title>
+=======
+        <title>ArewaPreneur</title>
+>>>>>>> 2a0915b7c4104e96fdc003a8c27bcda96a010ca0
         <link rel="icon" href="/favicon.ico" />
         <script
           src="https://www.google.com/recaptcha/api.js"

@@ -1,9 +1,13 @@
 {
-  "name": "triz-app",
+  "name": "arewaprenuer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "next dev -p 2021",
+=======
+    "dev": "next dev",
+>>>>>>> 2a0915b7c4104e96fdc003a8c27bcda96a010ca0
     "build": "next build",
     "start": "next start"
   },

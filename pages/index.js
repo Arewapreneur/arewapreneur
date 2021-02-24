@@ -23,9 +23,14 @@ export default function Home() {
     <Layout>
       <div className={styles.container}>
         <main className={styles.main}>
+<<<<<<< HEAD
           <h2 className="">Welcome to </h2>
           <h1 className="mb-5">ArewaPreneurs</h1>
           <p className="sub-heading mb-2 text-center">No. 1 Female Entrepreneurs' Support in the Northern Nigeria </p>
+=======
+          <h1 className="heading mb-3">ArewaPrenuer</h1>
+          <p className="sub-heading mb-2">Your quick access to money</p>
+>>>>>>> 2a0915b7c4104e96fdc003a8c27bcda96a010ca0
           <p className="text-mini mb-2 text-gray">
             Login or Signup to continue
           </p>
