@@ -110,7 +110,7 @@ const Index = () => {
         <div id="recaptcha-container"></div>
         <div className="reg-form">
           <h1 className="heading mb-1">Create an account</h1>
-          <p className="text-mini">Sign up with your phone number</p>
+          <p className="text-mini text-primary">Sign up with your phone number</p>
           <div className="phone-input">
             <p>+234</p>
             <input

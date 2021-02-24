@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Head>
-        <title>ArewaPreneur</title>
+        <title> <span className="h1 arewa-title">A</span>rewa<span className="h1 arewa-title">P</span>reneurs</title>
         <link rel="icon" href="/favicon.ico" />
         <script
           src="https://www.google.com/recaptcha/api.js"
