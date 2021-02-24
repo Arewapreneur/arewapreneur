@@ -23,8 +23,9 @@ export default function Home() {
     <Layout>
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className="heading mb-3">Welcome to QuikMoni</h1>
-          <p className="sub-heading mb-2">Your quick access to money</p>
+          <h2 className="">Welcome to </h2>
+          <h1 className="mb-5">ArewaPreneurs</h1>
+          <p className="sub-heading mb-2 text-center">No. 1 Female Entrepreneurs' Support in the Northern Nigeria </p>
           <p className="text-mini mb-2 text-gray">
             Login or Signup to continue
           </p>
