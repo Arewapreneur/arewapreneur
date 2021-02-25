@@ -21,6 +21,9 @@ export default function Home() {
   }, []);
   return (
     <Layout>
+      <Head>
+          <title>ArewaPrenuer</title>
+      </Head>
       <div className={styles.container}>
         <main className={styles.main}>
           <h4 className="mb-1">Welcome to</h4>
