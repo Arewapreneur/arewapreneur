@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 import Layout from "../../components/layout";
 import Link from "next/link";
 import firebase from "../../services/firebase";
@@ -123,6 +124,9 @@ const Index = () => {
 
   return (
     <Layout>
+      <Head>
+          <title>ArewaPrenuer</title>
+      </Head>
       <div className="register">
         <div id="recaptcha-container"></div>
         <div className="reg-form">
