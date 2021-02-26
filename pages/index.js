@@ -33,7 +33,7 @@ export default function Home() {
             Login or Signup to continue
           </p>
           <Link href="/register">
-            <button className="btn btn-outline mb-2">Signup</button>
+            <button className="btn btn-outline btn-success mb-2">Signup</button>
           </Link>
           <Link href="/login">
             <button className="btn btn-primary">Login</button>
