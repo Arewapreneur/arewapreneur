@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
+import Head from "next/head";
 import firebase from "../services/firebase";
 import Borrow from "../components/dashboard/borrow/borrow";
 import Invest from "../components/dashboard/invest/invest";
@@ -89,6 +90,9 @@ const Dashboard = () => {
   }, []);
   return showDash ? (
     <Layout>
+      <Head>
+          <title>ArewaPrenuer</title>
+      </Head>
       <div className="dashboard">
         <div className="tabs">
           <span
