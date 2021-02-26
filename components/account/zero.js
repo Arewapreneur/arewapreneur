@@ -15,9 +15,9 @@ function Zero({ accountInfo, handleChange, setStep }) {
         />
       </div>
       <div className="d-flex">
-        <p className="text-mini text-gray">Why do I need to input my BVN</p>
+        <p className="text-mini mb-3 text-gray">Why do I need to input my BVN ?</p>
         <button
-          className=""  
+          className=""
           onClick={() => setStep(1)}
         >
           Skip

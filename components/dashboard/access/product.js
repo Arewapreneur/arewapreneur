@@ -22,13 +22,17 @@ function product({ product, handleApply }) {
         <p className='name'>{product.product_name}</p>
         <p className='price'>N {product.product_price}</p>
       </div>
-      <div className="btn_holder"> <button
+      <div className="btn_holder">
+      <Link href="/success">
+      <button
               className="btn btn-primary"
               disabled={snapshot.userInfo?.payment_due !== 0}
               onClick={handleApply}
             >
               Request
-            </button></div>
+            </button>
+        </Link>
+            </div>
     </div>
   );
 }
