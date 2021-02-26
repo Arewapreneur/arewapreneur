@@ -13,11 +13,11 @@ const Layout = ({ children }) => {
       <Head>
         <title> ArewaPreneur</title>
         <link rel="icon" href="/favicon.ico" />
-        {/* <script
+        <script
           src="https://www.google.com/recaptcha/api.js"
           async
           defer
-        ></script> */}
+        ></script>
       </Head>
       <Nav />
       <div>
