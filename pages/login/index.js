@@ -127,7 +127,7 @@ const Index = () => {
         <div id="recaptcha-container"></div>
         <div className="reg-form">
           <h1 className="heading">Log in to continue</h1>
-          <p className="mt-1 text-primary">Log in with your phone number</p>
+          <p className="mt-1 text-primary">To sign in, please type in the phone and you will receive an otp</p>
           <div className="phone-input">
             <p>+234</p>
             <input

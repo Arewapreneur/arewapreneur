@@ -30,21 +30,14 @@ const Nav = () => {
     });
   }, []);
   return showNav ? (
-    <nav className="navbar">
-      <Link href="/">
-        <div className="logo">
-          ArewaPreneur
-        </div>
-      </Link>
-      <div className="burger-icon" onClick={() => setMenu(!menu)}>
-        <span>
-          <img src={burgerIcon} />
-        </span>
-      </div>
-      {menu && (
-        <Modal close={() => setMenu(!menu)}>
-          {login ? (
-            <div className="pop-menu">
+    <header className="header">
+      <div className="wrap">
+        <Link href="/">
+          <div className="logo">ArewaPreneur</div>
+        </Link>
+        {login ? (
+          <div className="menu-nav">
+            <ul className="nav-items">
               <div>
                 <Link href="/dashboard">
                   <a className="sub-heading">Home</a>
@@ -52,7 +45,7 @@ const Nav = () => {
               </div>
               <div>
                 <Link href="/account">
-                  <a className="sub-heading">Update Account</a>
+                  <a className="sub-heading">Account</a>
                 </Link>
               </div>
               <div>
@@ -60,30 +53,22 @@ const Nav = () => {
                   <a className="sub-heading">FAQs</a>
                 </Link>
               </div>
-              <button className="btn btn-outline" onClick={signOut}>
-                Logout
-              </button>
-            </div>
-          ) : (
-            <div className="pop-menu">
-              <div>
-                <Link href="/">
-                  <a className="sub-heading">Home</a>
-                </Link>
-              </div>
-              <div>
-                <Link href="/faqs">
-                  <a className="sub-heading">FAQs</a>
-                </Link>
-              </div>
-              <Link href="/login">
-                <button className="btn btn-outline">Login</button>
-              </Link>
-            </div>
-          )}
-        </Modal>
-      )}
-    </nav>
+            </ul>
+          </div>
+        ) : null}
+        {login ? (
+          <button className="btn btn-outline" onClick={signOut}>
+            Logout
+          </button>
+        ) : (
+          <div>
+            <Link href="/login">
+              <a className="btn btn-outline">Login</a>
+            </Link>
+          </div>
+        )}
+      </div>
+    </header>
   ) : null;
 };
 

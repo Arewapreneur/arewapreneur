@@ -1,49 +1,44 @@
-.navbar {
-  height: 70px;
+.header {
   display: flex;
+  height: 65px;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 25px;
-  z-index: 100;
-  background-color: #171717;
   position: fixed;
-  width: 100vw;
-  max-width: 500px;
-  top: 0;
+  width: 100%;
   left: 0;
+  top: 0;
+  background: #fff;
+  background: #fff;
+  box-shadow: 0 4px 13px rgb(0 0 0 / 5%);
+  z-index: 99;
 
-  @media(min-width: 500px) {
-    position: absolute;
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-  }
-
-  .logo {
-    width: 70%;
-
-    img {
-      width: 120px;
-    }
-  }
-
-  .burger-icon {
-    width: fit-content;
-
-    img {
-      height: 30px;
-      margin-bottom: 5px;
-    }
-  }
-
-  .pop-menu {
+  .wrap {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    height: 100%;
+    justify-content: space-between;
+  }
 
-    .btn {
-      width: 50%;
+  .nav-items {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: 55px;
+      color: black;
+      font-size: 0.875rem;
     }
+  }
+
+  .btn {
+    color: black;
+    min-width: 100px;
+    width: 100px;
   }
 }

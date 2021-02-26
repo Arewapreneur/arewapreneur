@@ -1,32 +1,49 @@
 .dashboard {
   height: 100vh;
   width: 100vw;
-  max-width: 500px;
+  max-width: 720px;
   padding-top: 80px;
   position: relative;
 
   .tabs {
     width: 100%;
     display: flex;
+    border-top: 1px solid $borderOff;
+    border-bottom: none !important;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    height: 47px !important;
+    min-height: 48px;
+    align-items: center;
+    justify-content: space-between;
 
     span {
       font-size: 18px;
       text-align: center;
       width: 50%;
       color: #909090;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #414141;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      align-self: center;
+      align-content: center;
+      justify-content: center;
+      // border-bottom: 1px solid #414141;
       transition: all 0.2s ease-in-out;
     }
 
     .active {
-      color: #ffffff;
+      color: #000;
       border-bottom: 2px solid $primary;
     }
   }
 
   .content {
     height: calc(100% - 40px);
+
+    .container {
+      padding: 0;
+    }
   }
 
   .help {
@@ -54,14 +71,19 @@
   padding: 30px 0;
   padding-bottom: 25%;
 
-  .products_list{
-    overflow-y: auto;
+  input {
+    height: 47px !important;
+    border: 1px solid $borderOff;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    padding: 10px 20px 10px 52px;
+    width: 100%;
+    color: #000;
   }
 
   .amount,
   .request,
-  .product,
-  .searchbox {
+  .product {
     position: relative;
     border-radius: 20px;
     padding: 10px 15px;
@@ -71,9 +93,12 @@
   .product {
     display: flex;
     justify-content: space-between;
+    border: none;
+    border-bottom: 1px solid $offWhiteTrans;
+    padding: 20px;
 
     .product__img {
-      width: 40%;
+      width: 15%;
     }
 
     img {
@@ -92,8 +117,6 @@
       align-content: flex-end;
     }
   }
-
-
 
   .clickable {
     &:hover {
@@ -122,6 +145,10 @@
   .btn-holder {
     margin-top: 30px;
   }
+}
+
+.products {
+  padding-bottom: 0%;
 }
 
 .plan {

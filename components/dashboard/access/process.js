@@ -12,8 +12,7 @@ const Process = ({ close, product }) => {
   const [sent, setSent] = useState(false);
   const [loanSlider, setSlider] = useState(5);
   const [loanInfo, setInfo] = useState({
-    // tenure: 0,
-    payment: 5000,
+    payment: product.product_price,
     product: {
       product_name: product.product_name,
       product_price: product.product_price,
@@ -35,10 +34,8 @@ const Process = ({ close, product }) => {
       .ref("userinfo/" + snapshot.user.uid)
       .set({
         ...snapshot.userInfo,
-        // amountborrowed: loanInfo.amount,
-        // tenure: loanInfo.tenure,
-        // rate: loanInfo.rate,
-        payment_due: loanInfo.payment,
+        amountborrowed: loanInfo.product.product_price,
+      tenure: loanInfo.tenure,
         product: loanInfo.product,
       })
       .then(() => {
@@ -75,7 +72,10 @@ const Process = ({ close, product }) => {
         <img src={product.product_img} alt={`${product.product_name} img`} />
 
         <div className="mt-3" style={{ marginBottom: "0" }}>
-          <p>Price - <span className="text-grey">{`N ${product.product_price}`}</span></p>
+          <p>
+            Price -{" "}
+            <span className="text-grey">{`N ${product.product_price}`}</span>
+          </p>
 
           <p>{product.product_tenure}</p>
 

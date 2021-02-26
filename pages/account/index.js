@@ -22,9 +22,10 @@ const Index = () => {
     bank_account_number: "",
     nok_name: "",
     nok_phone: "",
-    address: ''
+    address: "",
   });
   const [step, setStep] = useState(0);
+  
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -35,26 +36,28 @@ const Index = () => {
     });
   };
 
-  const Next =()=>{
-
-    
-    if(step === 1 )
-    {
-return <First  handleChange={handleChange}
-accountInfo={accountInfo}
-setAccountInfo={setAccountInfo}
-setStep={setStep}/>
-    } else{
-      return <Second
-      handleChange={handleChange}
-      accountInfo={accountInfo}
-      setAccountInfo={setAccountInfo}
-      setStep={setStep}
-    />
+  const Next = () => {
+    if (step === 1) {
+      return (
+        <First
+          handleChange={handleChange}
+          accountInfo={accountInfo}
+          setAccountInfo={setAccountInfo}
+          setStep={setStep}
+        />
+      );
+    } else if (step === 2) {
+      return (
+        <Second
+          handleChange={handleChange}
+          accountInfo={accountInfo}
+          setAccountInfo={setAccountInfo}
+          setStep={setStep}
+        />
+      );
     }
-  }
+  };
 
-  
   useEffect(() => {
     store.loading = true;
     firebase.auth().onAuthStateChanged(function (user) {
@@ -85,6 +88,12 @@ setStep={setStep}/>
       store.accountInfo = newInfo;
     }
   }, [accountInfo]);
+
+  useEffect(() => {
+   
+  }, [accountInfo]);
+
+  console.log(accountInfo.bvn)
   return (
     <Layout>
       <div className="container">
@@ -92,9 +101,15 @@ setStep={setStep}/>
           <h5 className="heading" style={{ fontSize: "25px" }}>
             Update your account
           </h5>
-          {step === 0 && <Zero  handleChange={handleChange}
-            accountInfo={accountInfo} setStep={setStep}/>}
-          <Next />
+          {step === 0 && (
+            <Zero
+              handleChange={handleChange}
+              setAccountInfo={setAccountInfo}
+              accountInfo={accountInfo}
+              setStep={setStep}
+            />
+          )}
+          {/* <Next /> */}
 
           {step === 3 && (
             <Modal>
