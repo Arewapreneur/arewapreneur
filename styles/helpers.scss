@@ -69,6 +69,16 @@ select {
     cursor: not-allowed;
   }
 }
+.btn-success {
+  background: #48d3d6;
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.6;
+    background: transparent linear-gradient(142deg, $gray 0%, #ffffff 100%);
+    cursor: not-allowed;
+  }
+}
 
 .mb-1 {
   margin-bottom: 10px !important;
