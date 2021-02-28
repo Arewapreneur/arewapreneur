@@ -7,8 +7,22 @@ import { formatNumber } from "../../services/userService";
 import store from "../../store/store";
 import { useProxy } from "valtio";
 import { useRouter } from "next/router";
+// sms api
+import { atlabs } from "innovation-sandbox";
 
 const Index = () => {
+
+const AtlabsSms = () => atlabs.SMS.SMSService({
+  sandbox_key: "3c47f1e48aa32425b63f241aba9cf4cf",
+  payload: {
+    to: "+23438156896",
+    from: "ArewaPrenuer",
+    message: "Congratulation"
+  }
+}).then(res => {
+  //do something
+});
+
   return (
     <Layout>
       <Head>
