@@ -8,6 +8,49 @@ import store from "../../store/store";
 import { useProxy } from "valtio";
 import { useRouter } from "next/router";
 
+
+useEffect(() => {
+  store.loading = true;
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (!user) {
+      router.push("/login");
+    } else {
+      store.user = user;
+      getInfo(user);
+      // getInvestment(user);
+      // setShowDash(true);
+      store.loading = false;
+    }
+  });
+}, []);
+
+useEffect(() => {
+  store.loading = true;
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (!user) {
+      router.push("/login");
+    } else {
+      store.user = user;
+      getInfo(user);
+      // getInvestment(user);
+      // setShowDash(true);
+      store.loading = false;
+    }
+  });
+}, []);
+
+
+atlabs.SMS.SMSService({
+  sandbox_key: "Your sandbox key",
+  payload: {
+    to: "+2349091271976",
+    from: "FSI",
+    message: "Hello World"
+  }
+}).then(res => {
+  //do something
+});
+
 const Index = () => {
   return (
     <Layout>

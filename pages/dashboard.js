@@ -3,7 +3,6 @@ import Layout from "../components/layout";
 import Head from "next/head";
 import firebase from "../services/firebase";
 import Borrow from "../components/dashboard/borrow/borrow";
-import Invest from "../components/dashboard/invest/invest";
 import Products from '../components/dashboard/access/products'
 import store from "../store/store";
 import { useProxy } from "valtio";
@@ -99,7 +98,7 @@ const Dashboard = () => {
             className={activeTab === "borrow" ? "active" : null}
             onClick={() => setActive("borrow")}
           >
-            Borrow
+            Account
           </span>
           <span
             className={activeTab === "products" ? "active" : null}
@@ -109,12 +108,8 @@ const Dashboard = () => {
           </span>
         </div>
         <div className="content">
-          {/* {activeTab === "borrow" ? <Borrow /> : <Invest />} */}
           {activeTab === "borrow" ? <Borrow /> : <Products />}
         </div>
-        <p className="text-gray help">
-          <b>?</b> Need help?
-        </p>
       </div>
     </Layout>
   ) : null;
