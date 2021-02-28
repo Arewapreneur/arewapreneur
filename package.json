@@ -1,11 +1,15 @@
 {
   "name": "arewaprenuer",
+  "main": "function.js",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "out": "next build && next export",
+    "deploy2": "cross-env NODE_ENV=production firebase deploy --only functions,hosting",
+    "deploy": "firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "cross-env": "^7.0.3",

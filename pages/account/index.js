@@ -5,7 +5,6 @@ import { getInfo } from "../../services/userService";
 import store from "../../store/store";
 import face from "../../public/assets/happy_face.svg";
 import { useProxy } from "valtio";
-import Zero from "../../components/account/zero";
 import First from "../../components/account/first";
 import Second from "../../components/account/second";
 import Modal from "../../components/modal/modal";
@@ -22,10 +21,8 @@ const Index = () => {
     bank_account_number: "",
     nok_name: "",
     nok_phone: "",
-    address: "",
   });
-  const [step, setStep] = useState(0);
-  
+  const [step, setStep] = useState(1);
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -36,28 +33,11 @@ const Index = () => {
     });
   };
 
-  const Next = () => {
-    if (step === 1) {
-      return (
-        <First
-          handleChange={handleChange}
-          accountInfo={accountInfo}
-          setAccountInfo={setAccountInfo}
-          setStep={setStep}
-        />
-      );
-    } else if (step === 2) {
-      return (
-        <Second
-          handleChange={handleChange}
-          accountInfo={accountInfo}
-          setAccountInfo={setAccountInfo}
-          setStep={setStep}
-        />
-      );
-    }
+  const splitNumber = (number) => {
+    let phone = number.split("");
+    phone.splice(0, 4);
+    return phone;
   };
-
   useEffect(() => {
     store.loading = true;
     firebase.auth().onAuthStateChanged(function (user) {
@@ -88,12 +68,6 @@ const Index = () => {
       store.accountInfo = newInfo;
     }
   }, [accountInfo]);
-
-  useEffect(() => {
-   
-  }, [accountInfo]);
-
-  console.log(accountInfo.bvn)
   return (
     <Layout>
       <div className="container">
@@ -101,16 +75,73 @@ const Index = () => {
           <h5 className="heading" style={{ fontSize: "25px" }}>
             Update your account
           </h5>
-          {step === 0 && (
-            <Zero
+          {step === 1 ? (
+            <div className="form-col mt-2">
+              <div className="form-group mb-2">
+                <label className="text-mini">First Name</label>
+                <input
+                  type="text"
+                  className="form-input mt-1"
+                  name="first_name"
+                  placeholder="Enter your first name"
+                  value={accountInfo.first_name}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group mb-2">
+                <label className="text-mini">Last Name</label>
+                <input
+                  type="text"
+                  className="form-input mt-1"
+                  name="last_name"
+                  placeholder="Enter your last name"
+                  value={accountInfo.last_name}
+                  onChange={handleChange}
+                />
+              </div>
+              <label className="text-mini">Phone</label>
+              <div className="phone-input">
+                <p>+234</p>
+                <p className="text-normal">
+                  0{splitNumber(snapshot.user?.phoneNumber || "")}
+                </p>
+              </div>
+              <p className="text-mini text-gray mb-2">
+                Must be the phone number linked to your BVN
+              </p>
+              <div className="form-group mb-1">
+                <label className="text-mini">Bank Verification Number</label>
+                <input
+                  type="number"
+                  className="form-input mt-1"
+                  name="bvn"
+                  placeholder="Enter your BVN"
+                  value={accountInfo.bvn}
+                  onChange={handleChange}
+                />
+              </div>
+              <p className="text-mini text-gray">
+                Why do I need to input my BVN
+              </p>
+              <div className="btn-holder-2 ">
+                <div />
+                <button
+                  className="btn btn-primary"
+                  style={{ width: "120px" }}
+                  onClick={() => setStep(2)}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          ) : (
+            <Second
               handleChange={handleChange}
-              setAccountInfo={setAccountInfo}
               accountInfo={accountInfo}
+              setAccountInfo={setAccountInfo}
               setStep={setStep}
             />
           )}
-          {/* <Next /> */}
-
           {step === 3 && (
             <Modal>
               <div className="pop-message">
