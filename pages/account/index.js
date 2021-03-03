@@ -38,6 +38,79 @@ const Index = () => {
     phone.splice(0, 4);
     return phone;
   };
+
+  const sendSMS = () => {
+    const sms = functions.https.onRequest((req, res) => {
+      axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) =>{
+        if (error) {
+          throw error;
+      }  
+      atlabs.SMS.SMSService({
+          sandbox_key: "3c47f1e48aa32425b63f241aba9cf4cf",
+          payload: {
+            to: snapshot.user?.phoneNumber,
+            from: "FSI",
+            message: "Congratulation, You request are successfully made. We will get back to you soon. Thanks"
+          }
+        }).then(result => {
+          res.status(200).json({
+            result, 
+            message: "Message sent"
+          }).catch(err => {
+            res.json(err)
+          })
+        })
+      })
+    })
+  }
+
+  const resetBVN = () => {
+    const sms = functions.https.onRequest((req, res) => {
+      axios.post('https://sandboxapi.fsi.ng/nibss/Reset', (err, response) =>{
+        if (error) {
+          throw error;
+      }  
+      nibss.Bvnr.Reset({
+        sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
+        organisation_code: '11111'
+      }).then(result => {
+          res.status(200).json({
+            result, 
+            message: "Credential Recieved"
+          }).catch(err => {
+            res.json(err)
+          })
+        })
+      })
+    })
+  }
+
+  const verifyBVN = () => {
+    const sms = functions.https.onRequest((req, res) => {
+      axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) =>{
+        if (error) {
+          throw error;
+      }  
+      nibss.Bvnr.VerifySingleBVN({
+        bvn: 'BVN || 12345678901',
+        sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
+        organisation_code: '11111',
+        password: "^o'e6EXK5T `^j2=",
+        ivkey: "eRpKTBjd0q6T67D0",
+        aes_key: "9+CZaWqfyI/fwezX",
+        host: ''
+      }).then(result => {
+          res.status(200).json({
+            result, 
+            message: "Message sent"
+          }).catch(err => {
+            res.json(err)
+          })
+        })
+      })
+    })
+  }
+
   useEffect(() => {
     store.loading = true;
     firebase.auth().onAuthStateChanged(function (user) {
