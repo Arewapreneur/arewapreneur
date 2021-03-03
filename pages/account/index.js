@@ -44,7 +44,7 @@ const Index = () => {
       axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) =>{
         if (error) {
           throw error;
-      }  
+      }
       atlabs.SMS.SMSService({
           sandbox_key: "3c47f1e48aa32425b63f241aba9cf4cf",
           payload: {
@@ -54,7 +54,7 @@ const Index = () => {
           }
         }).then(result => {
           res.status(200).json({
-            result, 
+            result,
             message: "Message sent"
           }).catch(err => {
             res.json(err)
@@ -69,13 +69,13 @@ const Index = () => {
       axios.post('https://sandboxapi.fsi.ng/nibss/Reset', (err, response) =>{
         if (error) {
           throw error;
-      }  
+      }
       nibss.Bvnr.Reset({
         sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
         organisation_code: '11111'
       }).then(result => {
           res.status(200).json({
-            result, 
+            result,
             message: "Credential Recieved"
           }).catch(err => {
             res.json(err)
@@ -90,7 +90,7 @@ const Index = () => {
       axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) =>{
         if (error) {
           throw error;
-      }  
+      }
       nibss.Bvnr.VerifySingleBVN({
         bvn: 'BVN || 12345678901',
         sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
@@ -101,7 +101,7 @@ const Index = () => {
         host: ''
       }).then(result => {
           res.status(200).json({
-            result, 
+            result,
             message: "Message sent"
           }).catch(err => {
             res.json(err)
@@ -194,7 +194,7 @@ const Index = () => {
                 />
               </div>
               <p className="text-mini text-gray">
-                Why do I need to input my BVN
+                Why do I need to input my BVN ?
               </p>
               <div className="btn-holder-2 ">
                 <div />
@@ -218,10 +218,16 @@ const Index = () => {
           {step === 3 && (
             <Modal>
               <div className="pop-message">
-                <img src={face} height={90} width={90} />
-                <p className="sub-heading mt-2">Account Updated</p>
+                <img src={face} height={55} width={55} />
+                <h1 className="heading mb-3">Mun gode!</h1>
+                <p className="sub-heading">Account Updated</p>
                 <p className="text-gray mt-1">
                   Your account details was updated successfully!
+                </p>
+                <p className="text-gray mt-1">
+                  Congratulation! Your request is successfully made. Kindly wait
+                  for call from us and subsequent personal and business verification.
+                  Thanks.
                 </p>
                 <Link href="/dashboard">
                   <button className="btn btn-primary mt-2">Back to Home</button>
