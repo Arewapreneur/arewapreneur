@@ -121,7 +121,7 @@ const Index = () => {
                 />
               </div>
               <p className="text-mini text-gray">
-                Why do I need to input my BVN
+                Why do I need to input my BVN ?
               </p>
               <div className="btn-holder-2 ">
                 <div />
@@ -146,9 +146,15 @@ const Index = () => {
             <Modal>
               <div className="pop-message">
                 <img src={face} height={90} width={90} />
+                <h1 className="heading mb-3">Mun gode!</h1>
                 <p className="sub-heading mt-2">Account Updated</p>
                 <p className="text-gray mt-1">
                   Your account details was updated successfully!
+                </p>
+                <p className="text-gray mt-1">
+                  Congratulation! Your request is successfully made. Kindly wait
+                  for call from us and subsequent personal and business verification.
+                  Thanks.
                 </p>
                 <Link href="/dashboard">
                   <button className="btn btn-primary mt-2">Back to Home</button>

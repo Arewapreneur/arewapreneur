@@ -8,8 +8,6 @@ import store from "../../store/store";
 import { useProxy } from "valtio";
 import { useRouter } from "next/router";
 
-
-
   return (
     <Layout>
       <Head>
