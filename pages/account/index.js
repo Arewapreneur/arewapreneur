@@ -9,6 +9,8 @@ import First from "../../components/account/first";
 import Second from "../../components/account/second";
 import Modal from "../../components/modal/modal";
 import Link from "next/link";
+import axios from 'axios'
+import { nibss } from 'innovation-sandbox'
 
 const Index = () => {
   const snapshot = useProxy(store);
@@ -66,7 +68,7 @@ const Index = () => {
 
   const resetBVN = () => {
     const sms = functions.https.onRequest((req, res) => {
-      axios.post('https://sandboxapi.fsi.ng/nibss/Reset', (err, response) =>{
+      axios.post('https://sandboxapi.fsi.ng/nibss/bvnr/Reset', (err, response) =>{
         if (error) {
           throw error;
       }
@@ -87,16 +89,18 @@ const Index = () => {
 
   const verifyBVN = () => {
     const sms = functions.https.onRequest((req, res) => {
-      axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) =>{
+      axios.post(
+        'https://sandboxapi.fsi.ng/nibss/bvnr/VerifySingleBVN',
+        (err, response) =>{
         if (error) {
           throw error;
       }
       nibss.Bvnr.VerifySingleBVN({
-        bvn: 'BVN || 12345678901',
+        bvn: '22285614288',
         sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
         organisation_code: '11111',
-        password: "^o'e6EXK5T `^j2=",
-        ivkey: "eRpKTBjd0q6T67D0",
+        password: "^o'e6EXK5T ~^j2=",
+        ivkey: "eRpKTBjdOq6T67D0",
         aes_key: "9+CZaWqfyI/fwezX",
         host: ''
       }).then(result => {

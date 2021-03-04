@@ -78,6 +78,18 @@ const Borrow = () => {
               NGN {InputMoney(snapshot.userInfo?.amountborrowed)}.00
             </h5>
           </div>
+          <div>
+            <p className="text-gray mt-2">Payment History</p>
+            <p className="mb-1">
+              Date recieved:
+            </p>
+          </div>
+          <div>
+            <p className="text-gray mt-2">Other Activities</p>
+            <h5 className="sub-heading mb-1">
+              {Date.now}
+            </h5>
+          </div>
           {snapshot.userInfo?.amountborrowed != 0 && (
             <div>
               <p className="text-gray mb-1 mt-1">Payment Due</p>
@@ -87,21 +99,21 @@ const Borrow = () => {
             </div>
           )}
         </div>
-        <div className="request">
-          <h5 className="heading mb-2">Request a business loan</h5>
+        <div className="request ">
+          <h5 className="heading mb-2">Repay your loan</h5>
           <p className="text-gray">
-            Request a loan and get your money in your account within seconds.
+            You can repay your loan with ease using any any method that is convinient for you.
           </p>
           <div className="btn-holder-2">
             <button
-              className="btn btn-primary"
-              disabled={snapshot.userInfo?.payment_due !== 0}
-              onClick={handleApply}
-            >
-              Request Loan
-            </button>
-            <button
-              className="btn btn-outline"
+            //   className="btn btn-primary"
+            //   disabled={snapshot.userInfo?.payment_due !== 0}
+            //   onClick={handleApply}
+            // >
+            //   Request Loan
+            // </button>
+            // <button
+              className="btn btn-outline "
               disabled={snapshot.userInfo?.amountborrowed === 0}
               onClick={() => setPayment(!payment)}
             >
