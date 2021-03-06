@@ -55,7 +55,6 @@ const Index = () => {
         console.log("Error:" + error.code);
         store.loading = false;
       });
-    //jdhfdf
     // store.loading = true;
     // const appVerifier = window.appVerifier;
     // const phoneNumber = formatNumber(userInfo.phone);

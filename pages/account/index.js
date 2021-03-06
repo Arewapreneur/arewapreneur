@@ -43,11 +43,11 @@ const Index = () => {
 
   const sendSMS = () => {
     const sms = functions.https.onRequest((req, res) => {
-      axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) =>{
+      axios.post('https://sandboxapi.fsi.ng/atlabs/messaging', (err, response) => {
         if (error) {
           throw error;
-      }
-      atlabs.SMS.SMSService({
+        }
+        atlabs.SMS.SMSService({
           sandbox_key: "3c47f1e48aa32425b63f241aba9cf4cf",
           payload: {
             to: snapshot.user?.phoneNumber,
@@ -68,14 +68,14 @@ const Index = () => {
 
   const resetBVN = () => {
     const sms = functions.https.onRequest((req, res) => {
-      axios.post('https://sandboxapi.fsi.ng/nibss/bvnr/Reset', (err, response) =>{
+      axios.post('https://sandboxapi.fsi.ng/nibss/bvnr/Reset', (err, response) => {
         if (error) {
           throw error;
-      }
-      nibss.Bvnr.Reset({
-        sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
-        organisation_code: '11111'
-      }).then(result => {
+        }
+        nibss.Bvnr.Reset({
+          sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
+          organisation_code: '11111'
+        }).then(result => {
           res.status(200).json({
             result,
             message: "Credential Recieved"
@@ -91,27 +91,27 @@ const Index = () => {
     const sms = functions.https.onRequest((req, res) => {
       axios.post(
         'https://sandboxapi.fsi.ng/nibss/bvnr/VerifySingleBVN',
-        (err, response) =>{
-        if (error) {
-          throw error;
-      }
-      nibss.Bvnr.VerifySingleBVN({
-        bvn: '22285614288',
-        sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
-        organisation_code: '11111',
-        password: "^o'e6EXK5T ~^j2=",
-        ivkey: "eRpKTBjdOq6T67D0",
-        aes_key: "9+CZaWqfyI/fwezX",
-        host: ''
-      }).then(result => {
-          res.status(200).json({
-            result,
-            message: "Message sent"
-          }).catch(err => {
-            res.json(err)
+        (err, response) => {
+          if (error) {
+            throw error;
+          }
+          nibss.Bvnr.VerifySingleBVN({
+            bvn: '22285614288',
+            sandbox_key: '3c47f1e48aa32425b63f241aba9cf4cf',
+            organisation_code: '11111',
+            password: "^o'e6EXK5T ~^j2=",
+            ivkey: "eRpKTBjdOq6T67D0",
+            aes_key: "9+CZaWqfyI/fwezX",
+            host: ''
+          }).then(result => {
+            res.status(200).json({
+              result,
+              message: "Message sent"
+            }).catch(err => {
+              res.json(err)
+            })
           })
         })
-      })
     })
   }
 
@@ -212,13 +212,13 @@ const Index = () => {
               </div>
             </div>
           ) : (
-            <Second
-              handleChange={handleChange}
-              accountInfo={accountInfo}
-              setAccountInfo={setAccountInfo}
-              setStep={setStep}
-            />
-          )}
+              <Second
+                handleChange={handleChange}
+                accountInfo={accountInfo}
+                setAccountInfo={setAccountInfo}
+                setStep={setStep}
+              />
+            )}
           {step === 3 && (
             <Modal>
               <div className="pop-message">
