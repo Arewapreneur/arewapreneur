@@ -29,5 +29,8 @@
     "react-paystack": "^3.0.3",
     "sass": "^1.30.0",
     "valtio": "^0.4.1"
+  },
+  "browser": {
+    "fs": false
   }
 }
